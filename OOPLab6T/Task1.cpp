@@ -44,7 +44,7 @@ protected:
 public:
     Circle3() : circle3(1){}
     Circle3(int c3) : circle3(c3){}
-    Circle3(int c3, int cc3) : Circle1(c3), circle3(cc3){}    
+    Circle3(int c3, int cc3, int ccc3) : Circle1(c3, cc3), circle3(ccc3){}    
 };
 
 class Circle4 : protected Circle2, Circle3
@@ -54,7 +54,7 @@ protected:
 public:
     Circle4() : circle4(1){}
     Circle4(int c4) : circle4(c4){}
-    Circle4(int a, int b, int c, int d, int e) : Circle2(a, b, c), Circle3(d, e){}
+    Circle4(int a, int b, int c, int d, int e, int f) : Circle2(a, b, c), Circle3(d, e, f){}
 
     void show()
     {
@@ -91,7 +91,7 @@ protected:
 public:
     Circle3V() : circle3(1){}
     Circle3V(int c3) : circle3(c3){}
-    Circle3V(int c3, int cc3) : Circle1V(c3), circle3(cc3){}    
+    Circle3V(int c3, int cc3, int ccc3) : Circle1V(c3, cc3), circle3(ccc3){}    
 };
 
 class Circle4V : virtual protected Circle2V, Circle3V
@@ -101,7 +101,7 @@ protected:
 public:
     Circle4V() : circle4(1){}
     Circle4V(int c4) : circle4(c4){}
-    Circle4V(int a, int b, int c, int d, int e) : Circle2V(a, b, c), Circle3V(d, e){}
+    Circle4V(int a, int b, int c, int d, int e, int f) : Circle2V(a, b, c), Circle3V(d, e, f){}
 
     void show()
     {
@@ -112,21 +112,21 @@ public:
 
 int main()
 {
-    Circle4 a, b(1, 2, 3, 4, 5);
+    //Circle4 a, b(1, 2, 3, 4, 5);
 
+    cout << "Default:" << endl;
     cout << "Base size: " << sizeof(BaseCircle) << " bytes" << endl;
     cout << "Circle1 size: " << sizeof(Circle1) << " bytes" << endl;
     cout << "Circle2 size: " << sizeof(Circle2) << " bytes" << endl;
     cout << "Circle3 size: " << sizeof(Circle3) << " bytes" << endl;
     cout << "Circle4 size: " << sizeof(Circle4) << " bytes" << endl;
 
+    cout << "Virtual:" << endl;
     cout << "Base size: " << sizeof(BaseCircle) << " bytes" << endl;
     cout << "Circle1V size: " << sizeof(Circle1V) << " bytes" << endl;
     cout << "Circle2V size: " << sizeof(Circle2V) << " bytes" << endl;
     cout << "Circle3V size: " << sizeof(Circle3V) << " bytes" << endl;
     cout << "Circle4V size: " << sizeof(Circle4V) << " bytes" << endl;
-
-    std::cout << "Size for object class Circle4 " << sizeof(Circle4) << " or " << sizeof(a) << " or " << sizeof(b) << std::endl;
 
     return 0;
 }
