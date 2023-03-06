@@ -3,7 +3,7 @@
 #include <string>
 #include <time.h>
 using namespace std; //  гоглг
-namespace SpaceExample2 {
+
     // Abstract Class
 // Створити абстрактний базовий клас домашня тварина із віртуальною функцією говорить. 
 // Створити похідні класи: кішка, собака, корова, качка та курка. 
@@ -92,7 +92,7 @@ namespace SpaceExample2 {
         name = n1[r1] + n2[r2];
         return name;
     }
-    int mainExample2()
+    int main()
     {
         
         cout << "Example 2 \n";
@@ -147,6 +147,3 @@ namespace SpaceExample2 {
         cin.get();
         return 0;
     }
-
-
-}
